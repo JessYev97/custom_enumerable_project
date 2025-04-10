@@ -24,4 +24,15 @@ class Array
       self 
     end 
   end
+
+def my_select
+  matching_arr = []
+  each do |element| 
+    if yield(element) == true 
+      matching_arr << element 
+    end 
+  end 
+  matching_arr
+end 
+
 end
