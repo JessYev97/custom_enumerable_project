@@ -35,4 +35,20 @@ def my_select
   matching_arr
 end 
 
+def my_all? 
+  verification_array = []
+  each do |element|
+    if yield(element) == true 
+      verification_array << true 
+    else 
+      verification_array << false 
+    end 
+  end 
+  if !verification_array.include?(false) 
+    return(true)
+    else 
+      return(false)
+  end
+end 
+
 end
