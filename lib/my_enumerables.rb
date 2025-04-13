@@ -51,4 +51,20 @@ def my_all?
   end
 end 
 
+def my_any? 
+  verification_array = [] 
+  each do |element|
+    if yield(element) == true 
+      verification_array << 1 
+    else 
+      verification_array << 0 
+    end 
+  end 
+  if verification_array.include?(1)
+    return(true) 
+  else 
+    return(false)
+  end 
+end 
+
 end
