@@ -46,7 +46,7 @@ def my_all?
   end 
   if !verification_array.include?(false) 
     return(true)
-    else 
+  else 
       return(false)
   end
 end 
@@ -64,6 +64,22 @@ def my_any?
     return(true) 
   else 
     return(false)
+  end 
+end 
+
+def my_none?
+  verification_array = []
+  each do |element| 
+    if yield(element) == true 
+      verification_array << 1 
+    else 
+      verification_array << 0 
+    end 
+  end 
+  if verification_array.include?(1) 
+    return(false)
+  else 
+    return(true) 
   end 
 end 
 
